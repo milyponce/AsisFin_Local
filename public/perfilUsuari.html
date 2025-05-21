@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AsisFin - Perfil de Usuario</title>
+    <link rel="icon" href="img/favicon.svg" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/perfilUsuario.js"></script>
+    
+</head>
+
+<body>
+    <header>
+        <img src="img/icono_logo.png" class="logo" alt="Logo de AsisFin">
+        <h1>AsisFin</h1>
+        <div id="perfilOpciones"> <!-- oculto -->
+            <a href="perfilUsuari.html" id="perfil"><i class="fas fa-user-circle me-2"></i>Perfil</a>
+            <a href="#" id="cerrarSesion"><i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión</a>
+        </div>
+    </header>
+    
+    <nav> 
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home me-2"></i>Inicio</a></li>
+            <li class="menuOculto"><a href="transacciones.html"><i class="fas fa-exchange-alt me-2"></i>Transacciones</a></li>
+            <li class="menuOculto"><a href="presupuesto.html"><i class="fas fa-chart-pie me-2"></i>Presupuestos</a></li>
+            <li class="menuOculto"><a href="foro.html"><i class="fas fa-comments me-2"></i>Foro</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h2 class="mb-4">Bienvenido <span id="idNombreBienvenida"></span></h2>
+    
+        <div class="container text-center mt-4">
+            <a href="" class="btn btn-primary" id="idEliminarCuenta">Eliminar Cuenta</a>
+        </div>
+        
+    
+        <section class="card shadow my-4">
+            <div class=" card-body">
+                <form id="idFormPerfil">
+                    <b id="error" class="alert alert-primary" role="alert"></b>
+                    <fieldset class="mb-4">
+                        <legend>Información del usuario</legend>
+    
+                        <input type="hidden" class="idUsuario" disabled>
+    
+                        <div class="mb-3">
+                            <label for="idNombre" class="form-label">Nombre Completo</label>
+                            <input type="text" name="idNombre" id="idNombre" class="form-control" disabled>
+                        </div>
+    
+                        <div class="mb-3">
+                            <b id="infoCorreo" class="alert alert-primary" role="alert"></b>
+                            <label for="idCorreo" class="form-label">Correo Electrónico</label>
+                            <input type="text" name="idCorreo" id="idCorreo" class="form-control" disabled>
+                        </div>
+    
+                        <div class="mt-2">
+                            <a href="" class="btn btn-outline-primary btn-sm editarPerfil" data-email="true">Editar
+                                Correo</a>
+                        </div>
+                    </fieldset>
+    
+                    <fieldset class="mb-4">
+                        <legend>Cuenta Bancaria</legend>
+    
+                        <div class="mb-3">
+                            <b id="infoCuenta" class="alert alert-primary" role="alert"></b>
+                            <label for="nIdentificador" class="form-label">Número de Identificación:</label>
+                            <input type="text" name="nIdentificador" id="nIdentificador" class="form-control" disabled>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="idClave" class="form-label">Clave Acceso:</label>
+                            <input type="password" name="idClave" id="idClave" class="form-control" disabled>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="idIban" class="form-label">Número de IBAN:</label>
+                            <input type="text" name="idIban" id="idIban" class="form-control" disabled>
+                        </div>
+    
+                        <div class="mt-2">
+                            <a href="" class="btn btn-outline-primary btn-sm editarPerfil" data-cuenta="true">Editar
+                                Cuenta Bancaria</a>
+                        </div>
+                    </fieldset>
+    
+                    <fieldset class="mb-4">
+                        <legend>Configuración de Cuenta</legend>
+    
+                        <div class="mb-3">
+                            <b id="infoContra" class="alert alert-primary" role="alert"></b>
+                            <label for="idContra" class="form-label">Cambio de contraseña</label>
+                            <input type="password" name="idContra" id="idContra" class="form-control" disabled>
+                            <div class="mt-2">
+                                <a href="" class="btn btn-outline-primary btn-sm editarPerfil" data-pass="true">Editar
+                                    Contraseña</a>
+                            </div>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="id2FA" class="form-label">Verificación en dos pasos (2FA)</label>
+                            <input type="text" name="id2FA" id="id2FA" class="form-control" disabled>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="idAlerNotifi" class="form-label">Alertas y notificaciones financieras</label>
+                            <input type="text" name="idAlerNotifi" id="idAlerNotifi" class="form-control" disabled>
+                        </div>
+                    </fieldset>
+    
+                    <fieldset id="idHistoria" class="mb-4">
+                        <legend>Historial de actividad</legend>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    
+        <section id="idRecomendacion" class="card shadow my-4">
+            <div class="card-body">
+                <legend>Recomendaciones</legend>
+                <p id="idListaRecomenFinanciera"></p>
+            </div>
+        </section>
+    
+        <div class="mb-4">
+            <a href="mailto:contacto@saldivarponce.com" class="btn btn-primary enlace" id="idContacTecni">Contacto con soporte técnico</a>
+        </div>
+    </main>
+    
+
+    <footer>
+        <p>&copy: 2025 Derechos reservados</p>
+        <p>Desarrollado por Milagros Ponce</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

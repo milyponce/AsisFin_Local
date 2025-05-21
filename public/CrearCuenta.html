@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AsisFin - Crear Cuenta</title>
+    <link rel="icon" href="img/favicon.svg" type="image/x-icon">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/inicioSesion.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="img/icono_logo.png" class="logo" alt="Logo de AsisFin">
+        <h1>AsisFin</h1>
+        <div class="oculto" id="perfilOpciones"> <!-- oculto -->
+            <a href="perfilUsuari.html" id="perfil"><i class="fas fa-user-circle me-2"></i>Perfil</a>
+            <a href="#" id="cerrarSesion"><i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión</a>
+        </div>
+    </header>
+    
+    <nav> 
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home me-2"></i>Inicio</a></li>
+            <li class="menuOculto"><a href="transacciones.html"><i class="fas fa-exchange-alt me-2"></i>Transacciones</a></li>
+            <li class="menuOculto"><a href="presupuesto.html"><i class="fas fa-chart-pie me-2"></i>Presupuestos</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+
+                <section class="card shadow my-4">
+                    <div class="card-body p-4">
+
+                        <h2 class="text-center mb-4">CREAR CUENTA</h2>
+
+                        <b id="info" class="alert alert-primary" role="alert"></b>
+
+                        <form id="formCrearCuenta" method="post" class="needs-validation" novalidate>
+                            <div class="mb-4"><!-- Nombre -->
+                                <label for="idNombre" class="form-label">
+                                    <i class="fas fa-user me-2 text-primary"></i>Nombre
+                                </label>
+                                <b id="error_nombre" class="text-danger ms-2 small"></b>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="idNombre" name="nombre"
+                                        placeholder="Tu nombre" required>
+                                </div>
+
+                                <div class="mb-4"> <!-- Apellidos -->
+                                    <label for="idApellidos" class="form-label">
+                                        <i class="fas fa-user-tag me-2 text-primary"></i>Apellidos
+                                    </label>
+                                    <b id="error_apellidos" class="text-danger ms-2 small"></b>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="idApellidos" name="apellidos"
+                                            placeholder="Tus apellidos" required>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4"> <!-- Email -->
+                                    <label for="idCorreo" class="form-label">
+                                        <i class="fas fa-envelope me-2 text-primary"></i>Email
+                                    </label>
+                                    <b id="error_correo" class="text-danger ms-2 small"></b>
+                                    <div class="input-group">
+                                        <input type="email" class="form-control" id="idCorreo" name="correo"
+                                            placeholder="Correo Electronico" required>
+                                    </div>
+                                    <div class="form-text">Tu email será tu nombre de usuario para iniciar sesión
+                                    </div>
+                                </div>
+
+                                <div class="mb-4"> <!-- Contraseña -->
+                                    <label for="idContra" class="form-label">
+                                        <i class="fas fa-lock me-2 text-primary"></i>Contraseña
+                                    </label>
+                                    <b id="error_contra" class="text-danger ms-2 small"></b>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="idContra" name="pass"
+                                            placeholder="Contraseña" required>
+                                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                    <div class="form-text">Debe tener al menos 8 caracteres, incluyendo letras y
+                                        números
+                                    </div>
+                                </div>
+
+                                <fieldset class="mb-4"> <!--Datos banco -->
+                                    <legend><i class="fas fa-university me-2 text-primary"></i>Datos Bancarios </legend>
+
+                                    <div class="mb-4"><!--numero de identificacion -->
+                                        <label for="nIdentificacion" class="form-label">Número de
+                                            Identificación</label>
+                                        <b id="error_identificacion" class="text-danger ms-2 small"></b>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="nIdentificacion" name="nIden"
+                                                placeholder="Nº Identificación" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4"> <!-- Clave de acceso -->
+                                        <label for="idClave" class="form-label">Clave de Acceso Bancaria</label>
+                                        <b id="error_clave" class="text-danger ms-2 small"></b>
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" id="idClave" name="claveAcceso"
+                                                placeholder="Clave de Acceso" required>
+                                            <button class="btn btn-outline-secondary" type="button" id="toggleClave">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
+                                        <div class="form-text">Esta clave es proporcionada por tu entidad bancaria
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <div class="mb-4"> <!-- Terminoss y condiciones -->
+                                    <input class="form-check-input" type="checkbox" id="acceptTerms" required>
+                                    <label class="form-check-label" for="acceptTerms"> Acepto los <a
+                                            href="terminosCondiciones.html" target="_blank"
+                                            class="text-decoration-none">términos y condiciones</a></label>
+                                            <b id="error_terminos" class="text-danger ms-2 small"></b>
+                                </div>
+
+                                <div class="d-grid gap-2"> <!-- Boton para crear cuenta -->
+                                    <button type="submit" id="btn_crear_cuenta" name="cuenta" class="btn btn-primary">
+                                        <i class="fas fa-user-plus me-2"></i>Crear Cuenta
+                                    </button>
+                                </div>
+                        </form>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="text-center mt-4"> <!-- Boton para ir a iniciar sesion -->
+            <p>¿Ya tienes una cuenta?</p>
+            <a href="inicioSesion.html" class="btn btn-outline-primary enlace">
+                <i class="fas fa-sign-in-alt me-2"></i>Iniciar Sesión
+            </a>
+        </div>
+
+    </main>
+
+
+    <footer class="container-fluid">
+        <p>&copy; 2025 Derechos reservados</p>
+        <p>Desarrollado por Milagros Ponce</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,492 @@
+/*Ventana de advertencia*/
+.fullscreen-alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(100deg, #4895ef, #171825); 
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+
+
+.alert-content {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+
+.alert-title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.alert-message {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+/* Clase para perfil usuario y cerrar sesion */
+#perfilOpciones {
+    display: none; 
+    justify-content: flex-start; 
+    gap: 20px; 
+    padding: 10px;
+    border-radius: 8px;
+}
+
+
+nav ul li.menuOculto {
+    display: none;
+}
+
+#perfilOpciones a {
+    text-decoration: none;
+    color: var(--primary-color);
+    padding: 5px; 
+}
+
+
+/*Boton para eliminar la cuenta de usuario*/
+#idEliminarCuenta{
+    display: block !important;
+    width: 30%;
+}
+
+
+/* ocultar la section del pin por defecto */
+.pinOculto {
+    display: none;
+}
+
+/*ocultar el section de el grafico por defecto*/
+#mostraGrafico{
+    display: none;
+}
+
+/* Estilos personalizados avanzados para complementar Bootstrap */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* valores */
+:root {
+    --primary-color: #4361ee;
+    --primary-light: #4895ef;
+    --secondary-color: #3f37c9;
+    --danger-color: #0109f9;
+    --dark-color: #2b2d42;
+    --light-color: #f8f9fa;
+    --gray-color: #e9ecef;
+    --text-color: #171825;
+    --box-shadow: 0 0.5rem 1.5rem rgba(22, 28, 45, 0.1);
+    --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    --transition: all 0.3s ease;
+    --border-radius: 10px;
+    --border-button: rgba(50, 50, 93, 0.15);
+}
+
+#alertas-container .toast {
+    border: none;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#alertas-container .progress-bar {
+    animation: progressAnimation 1s ease-in-out;
+}
+
+@keyframes progressAnimation {
+    from { width: 0; }
+}
+
+#alertas-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    backdrop-filter: blur(2px);
+}
+
+/*body*/
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Estilos refinados para header */
+header {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    gap: 2rem;
+    padding: 1rem 2rem;
+    background-color: var( --light-color);
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+
+header .logo {
+    max-height: 3.5rem;
+    transition: var(--transition);
+}
+
+header .logo:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos para el nav */
+nav {
+    background: var(--gradient-primary);
+    padding: 0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center; 
+    gap: 2rem; 
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+nav ul li a:after { /*efecto de subrayado animado debajo de los enlaces*/
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition: var(--transition);
+}
+
+nav ul li a:hover:after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    text-decoration: none;
+}
+
+
+/* Estilos para main containers */
+.container {
+    padding: 2rem 1rem;
+}
+
+/* Estilos para cards y secciones */
+.card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2rem rgba(22, 28, 45, 0.15);
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+/* section de index */
+section.inicio {
+    margin: 3rem auto;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.inicio .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius);
+    width: 100%;
+    height: 100%;
+}
+
+section.inicio img {
+    transition: var(--transition);
+    width: 200x;
+    height: auto;
+    max-width: 80%;
+    padding-top: 5%;
+    
+}
+
+section.inicio img:hover {
+    transform: scale(1.03);
+}
+
+section.inicio p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    padding: 1rem;
+    text-align: center;
+}
+
+
+/* Estilos para headings */
+h2 {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+h2:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+.text-center h2:after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Estilo de formularios */
+.form-control, .form-select {
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--gray-color);
+    border-radius: 8px;
+    transition: var(--transition);
+    font-size: 1rem;
+}
+
+.form-control:focus, .form-select:focus { /*borde de input seleccionado*/
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
+}
+
+label.form-label {
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+fieldset {
+    border: 1px solid var(--gray-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+legend {
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0 0.5rem;
+    color: var(--primary-color);
+}
+
+.text-danger{
+    color: var(--primary-light) !important;
+}
+
+/* Botones mejorados */
+.btn {
+    padding: 0.8rem 1.5rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.1);
+}
+
+.btn-info-saldo{
+    border-color: var(--dark-color);
+    color: var(--dark-color)
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+    transform: translateY(-3px);
+    box-shadow: 0 7px 14px var(--border-button);
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    transform: translateY(-3px);
+    box-shadow: 0 7px 14px var(--border-button);
+}
+
+/* Estilo del checkbox */
+.form-check-input:checked {
+    border-color: var(--primary-color); 
+    background-color: var(--primary-color); 
+}
+
+.form-check-input {
+    border-color: var(--dark-color); 
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* btn enlace*/
+.enlace {
+    font-weight: 500;
+    background-color:var( --primary-color) ;
+    text-decoration: none;
+    color: var(--light-color);
+}
+
+.enlace:hover {
+    color: var(--secondary-color);
+    text-decoration: none;
+    color: var(--light-color);
+    background-color: var( --primary-light);
+}
+
+/* Mejora de alertas y mensajes de error */
+.alert {
+    border-radius: 8px;
+    border-left: 4px solid var(--dark-color);
+    padding: 1rem 1.5rem;
+    border-color: var(--danger-color);
+    background-color: var(--light-color);
+    display: none;
+    color: var(--danger-color) !important;
+}
+
+
+/* Footer mejorado */
+footer {
+    background: var(--gradient-primary);
+    color: var(--light-color);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    box-shadow: 0 -4px 8px rgba(22, 28, 45, 0.08);
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+}
+
+/* Efectos de animación */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card, section.inicio {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Responsividad */
+@media (max-width: 792px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    header .logo {
+        display: none;
+    }
+    
+    header h1 {
+        display: block;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    nav ul li {
+        width: 100%;
+    }
+    
+    nav ul li a {
+        text-align: center;
+        padding: 0.30rem;
+    }
+
+    nav ul li a:after { /*efecto de subrayado animado debajo de los enlaces*/
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 3px;
+        bottom: 0;
+        left: 0;
+        background-color: white;
+        transition: var(--transition);
+    }
+    
+    section.inicio {
+        text-align: center;
+    }
+    
+    .card-body {
+        padding: 1.5rem;
+    }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AsisFin - Tu Asistente Financiero</title>
+    <link rel="icon" href="img/favicon.svg" type="image/x-icon">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="img/icono_logo.png" class="logo" alt="Logo de AsisFin">
+        <h1>AsisFin</h1>
+        <div class="oculto" id="perfilOpciones">
+            <a href="perfilUsuari.html" id="perfil"><i class="fas fa-user-circle me-2"></i>Perfil</a>
+            <a href="#" id="cerrarSesion"><i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión</a>
+        </div>
+    </header>
+
+    <nav> 
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home me-2"></i>Inicio</a></li>
+            <li class="menuOculto"><a href="transacciones.html"><i class="fas fa-exchange-alt me-2"></i>Transacciones</a></li>
+            <li class="menuOculto"><a href="presupuesto.html"><i class="fas fa-chart-pie me-2"></i>Presupuestos</a></li>
+            <li class="menuOculto"><a href="foro.html"><i class="fas fa-comments me-2"></i>Foro</a></li>
+        </ul>
+    </nav>
+    
+
+    <div class="btn-index container text-center mt-4 ">
+        <a href="inicioSesion.html" class="btn btn-primary">Iniciar Sesión</a>
+    </div>
+
+    <main class="container mt-5">
+        <!-- Fila de tarjetas -->
+        <div class="row g-4 justify-content-center">
+            <!-- Tarjeta 1 -->
+            <section class="inicio col-md-4 col-12">
+                <div class="card shadow-lg border-0 rounded-3 h-100">
+                    <img src="img/logo.png" class="card-img-top rounded-3" alt="Logo AsisFin">
+                    <div class="card-body">
+                        <p>Tu compañero ideal para una vida financiera más fácil. Optimiza tus ingresos, ahorros, gastos
+                            y presupuesto con nuestro asistente financiero personal, diseñado para ayudarte a tomar
+                            decisiones más inteligentes.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tarjeta 2 -->
+            <section class="inicio col-md-4 col-12">
+                <div class="card shadow-lg border-0 rounded-3 h-100">
+                    <img src="img/iconos_AsisFin.png" class="card-img-top rounded-3" alt="Graficos de presupuesto">
+                    <div class="card-body">
+                        <p>AsisFin es una herramienta invaluable para la gestión de las finanzas personales. Su
+                            principal función es ayudar a las personas a organizar, planificar y supervisar sus
+                            finanzas, asegurando que se alcancen objetivos económicos a corto y largo plazo.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tarjeta 3 -->
+            <section class="inicio col-md-4 col-12">
+                <div class="card shadow-lg border-0 rounded-3 h-100">
+                    <img src="img/grafico_presupuesto.png" class="card-img-top rounded-3"
+                        alt="Graficos de presupuesto">
+                    <div class="card-body">
+                        <p>Con el uso de tecnología avanzada nos permite el acceso a la información financiera para dar
+                            un paso crucial hacia una vida financiera más estable y segura. Gracias a los gráficos nos
+                            ayudan a comprender y gestionar nuestros presupuestos de manera más efectiva.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="container-fluid">
+        <p>&copy; 2025 Derechos reservados</p>
+        <p>Desarrollado por Milagros Ponce</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

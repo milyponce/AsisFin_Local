@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AsisFin - Transacciones</title>
+    <link rel="icon" href="img/favicon.svg" type="image/x-icon">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/transacciones.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="img/icono_logo.png" class="logo" alt="Logo de AsisFin">
+        <h1>AsisFin</h1>
+        <div class="oculto" id="perfilOpciones"> <!-- oculto -->
+            <a href="perfilUsuari.html" id="perfil"><i class="fas fa-user-circle me-2"></i>Perfil</a>
+            <a href="#" id="cerrarSesion"><i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión</a>
+        </div>
+    </header>
+
+    <nav> 
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home me-2"></i>Inicio</a></li>
+            <li class="menuOculto"><a href="transacciones.html"><i class="fas fa-exchange-alt me-2"></i>Transacciones</a></li>
+            <li class="menuOculto"><a href="presupuesto.html"><i class="fas fa-chart-pie me-2"></i>Presupuestos</a></li>
+            <li class="menuOculto"><a href="foro.html"><i class="fas fa-comments me-2"></i>Foro</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="container mb-5">
+        <div class="text-end mb-3">
+            <a href="hacerTransferencia.html"
+                class="btn btn-primary animate__animated animate__fadeInRight botonesEnlace">
+                <i class="fas fa-plus me-2"></i>Hacer Transacción
+            </a>
+        </div>
+
+        <div class="d-flex justify-content-center mb-3">
+            <div class="d-inline-block btn btn-info-saldo text-center">
+                <b id="saldo">€</b> <br>
+                <b id="iban">ES </b>
+            </div>
+        </div>
+
+
+        <section id="idFormFiltro" class="card shadow p-4 mb-4 animate__animated animate__fadeInUp">
+            <form method="post" action="" class="row g-3 align-items-center">
+                <div class="col-md-4">
+                    <label for="idfiltro" class="form-label">Filtro:</label>
+                    <select id="idfiltro" class="form-select">
+                        <option value="*" selected>Todo</option>
+                        <option value="gasto">Gastos</option>
+                        <option value="ingreso">Ingresos</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="idOrden" class="form-label">Orden de fecha:</label>
+                    <select id="idOrden" class="form-select">
+                        <option value="ASC" selected>Ascendente</option>
+                        <option value="DESC">Descendente</option>
+                    </select>
+                </div>
+            </form>
+        </section>
+
+        <section class="animate__animated animate__fadeInUp">
+            <h2 id="idTitulo" class="mb-4 text-center"><i class="fas fa-list me-2"></i>Transacciones por AsisFin</h2>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered align-middle shadow-sm" id="idTablaTransacciones">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>Concepto</th>
+                            <th>Monto</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transaccionBodyAsisFin"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <br>
+
+        <section class="animate__animated animate__fadeInUp">
+            <h2 id="idTitulo" class="mb-4 text-center"><i class="fas fa-list me-2"></i>Transacciones por Cuenta Bancaria</h2>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered align-middle shadow-sm" id="idTablaTransacciones">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>Concepto</th>
+                            <th>Monto</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transaccionBodyBanco"></tbody>
+                </table>
+            </div>
+        </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy: 2025 Derechos reservados</p>
+        <p>Desarrollado por Milagros Ponce</p>
+    </footer>
+
+
+</body>
+
+</html>
